@@ -3,7 +3,7 @@ const aboutMeText = `$ ./about_govind.sh
 Loading user profile...
 
 hi i'm Govind,
-i'm a 17 year old, trying to get through life lmao.
+i'm a 16 year old, trying to get through life lmao.
 i have so much love for things like maths, physics and music.
 
 Here are some fun facts about me:
