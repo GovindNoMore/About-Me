@@ -1,8 +1,6 @@
 # About-me
 # About Me - Personal Portfolio
 
-![Portfolio Preview](images/govind-profile.jpg)
-
 Welcome to my personal portfolio website! This project showcases my skills in web development, music, and creative expression through an interactive terminal-inspired interface.
 
 ## 🌟 Features
