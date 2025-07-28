@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Covers - Govind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="covers.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="music.html" class="active">Music</a>
+                <div class="dropdown-content">
+                    <a href="music.html">My Story</a>
+                    <a href="covers.html" class="active-sub">Covers</a>
+                </div>
+            </div>
+            <a href="code.html">Code</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="covers-hero">
+            <h1 class="covers-main-title">My Covers</h1>
+            <p class="covers-subtitle">hurting people's ears since 2021 ✨</p>
+        </div>
+
+        <section class="audio-player-section">
+            <div class="player-container">
+                <div class="vinyl-player">
+                    <div class="vinyl-disc" id="vinyl-disc">
+                        <div class="vinyl-center">
+                            <div class="vinyl-hole"></div>
+                        </div>
+                    </div>
+                    <div class="tonearm">
+                        <div class="tonearm-base"></div>
+                        <div class="tonearm-arm"></div>
+                    </div>
+                </div>
+                
+                <div class="player-info">
+                    <div class="now-playing-info">
+                        <h3 id="current-song">Select a song to play</h3>
+                        <p id="current-artist">Govind</p>
+                    </div>
+                    
+                    <div class="player-controls">
+                        <button class="control-btn" id="prev-btn">⏮</button>
+                        <button class="control-btn play-btn" id="play-btn">▶</button>
+                        <button class="control-btn" id="next-btn">⏭</button>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                        <div class="time-info">
+                            <span id="current-time">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="covers-grid-section">
+            <h2 class="section-title">Available Covers</h2>
+            <div class="covers-grid">
+                <div class="cover-card" data-song="0">
+                    <div class="cover-artwork">
+                        <div class="cover-icon">🎸</div>
+                        <div class="play-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="cover-info">
+                        <h3 class="cover-title">No surprises</h3>
+                        <p class="cover-artist">Radiohead Cover</p>
+                        <div class="cover-tags">
+                            <span class="tag">Acoustic</span>
+                            <span class="tag">Melancholic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cover-card" data-song="1">
+                    <div class="cover-artwork">
+                        <div class="cover-icon">🎵</div>
+                        <div class="play-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="cover-info">
+                        <h3 class="cover-title">Lovers Rock</h3>
+                        <p class="cover-artist">Tv girls</p>
+                        <div class="cover-tags">
+                            <span class="tag">Chill</span>
+                            <span class="tag">Soothing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cover-card" data-song="2">
+                    <div class="cover-artwork">
+                        <div class="cover-icon">🌙</div>
+                        <div class="play-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="cover-info">
+                        <h3 class="cover-title">City of Stars</h3>
+                        <p class="cover-artist">Ryan Gossling</p>
+                        <div class="cover-tags">
+                            <span class="tag">Soothing</span>
+                            <span class="tag">Acoustic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cover-card" data-song="3">
+                    <div class="cover-artwork">
+                        <div class="cover-icon">🎭</div>
+                        <div class="play-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="cover-info">
+                        <h3 class="cover-title">Remember You</h3>
+                        <p class="cover-artist">Adventure Time</p>
+                        <div class="cover-tags">
+                            <span class="tag">Nostalgic</span>
+                            <span class="tag">Raw</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cover-card coming-soon">
+                    <div class="cover-artwork">
+                        <div class="cover-icon">⏳</div>
+                    </div>
+                    <div class="cover-info">
+                        <h3 class="cover-title">More Coming Soon...</h3>
+                        <p class="cover-artist">Stay Tuned</p>
+                        <div class="cover-tags">
+                            <span class="tag">???</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recording-setup">
+            <div class="setup-container">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <div class="btn red"></div>
+                        <div class="btn yellow"></div>
+                        <div class="btn green"></div>
+                    </div>
+                    <div class="terminal-title">recording_setup.sh</div>
+                </div>
+                <div class="terminal-body">
+                    <h3 class="setup-title">My "Professional" Setup</h3>
+                    <div class="setup-content">
+                        <div class="setup-item">
+                            <span class="setup-icon">🎸</span>
+                            <div class="setup-info">
+                                <h4>Guitar</h4>
+                                <p>Some cheap ahh guiatr but i love it sm (it works, okay?)</p>
+                            </div>
+                        </div>
+                        <div class="setup-item">
+                            <span class="setup-icon">🎤</span>
+                            <div class="setup-info">
+                                <h4>Microphone</h4>
+                                <p>My phone's built-in mic (the true audiophile experience)</p>
+                            </div>
+                        </div>
+                        <div class="setup-item">
+                            <span class="setup-icon">💻</span>
+                            <div class="setup-info">
+                                <h4>Recording Software</h4>
+                                <p>Whatever free app I could find that doesn't crash every 5 minutes</p>
+                            </div>
+                        </div>
+                        <div class="setup-item">
+                            <span class="setup-icon">🏠</span>
+                            <div class="setup-info">
+                                <h4>Studio</h4>
+                                <p>My bedroom at 2 AM (optimal for disturbing neighbors)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="covers-quote">
+            <blockquote class="shadows-into-light-regular">
+                "I may not have the voice of an angel, but at least I have the voice of... something."
+            </blockquote>
+            <cite>- Me, being realistic about my singing</cite>
+        </div>
+    </div>
+
+    <!-- Hidden audio elements for demo purposes -->
+    <audio id="audio-player" preload="metadata">
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="covers.js"></script>
+</body>
+</html>

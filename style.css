@@ -1,0 +1,459 @@
+:root {
+    --main-bg: #1a1a2e;
+    --secondary-bg: #16213e;
+    --accent: #0f3460;
+    --text-primary: #eee;
+    --text-secondary: #533483;
+    --paper-bg: #fff;
+    --text-dark: #222;
+    --terminal-bg: #0d1117;
+    --terminal-border: #30363d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'IBM Plex Mono', 'Fira Mono', monospace;
+    background: var(--main-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--accent);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--accent);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(15, 52, 96, 0.3);
+}
+
+/* Container - Reduced padding for better spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem; /* Reduced top and bottom padding */
+}
+
+/* Header - Reduced margin */
+.main-header {
+    text-align: center;
+    margin-bottom: 3rem; /* Reduced from 4rem */
+    padding: 1.5rem 0; /* Reduced from 2rem */
+}
+
+.main-title {
+    font-family: 'IBM Plex Mono', 'Fira Mono', monospace;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 1.2rem; /* Reduced from 1.5rem */
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-title u {
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+
+.social-icons {
+    margin: 1.5rem 0; /* Reduced from 2rem */
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-bg);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(15, 52, 96, 0.4);
+}
+
+.main-subtitle {
+    font-family: 'IBM Plex Mono', 'Fira Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.subtitle-emphasis {
+    font-weight: 300;
+    color: #888;
+}
+
+/* Profile and Terminal Section - Better spacing */
+.profile-terminal-section {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Slightly larger profile area */
+    gap: 2.5rem; /* Reduced from 3rem */
+    margin-bottom: 3rem; /* Reduced from 4rem */
+    align-items: start;
+}
+
+.profile-image {
+    position: relative;
+    perspective: 1000px;
+    width: 300px; /* Increased from 280px */
+    height: 300px; /* Increased from 280px */
+}
+
+.profile-flip-card {
+    width: 300px; /* Increased from 280px */
+    height: 300px; /* Increased from 280px */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.profile-image:hover .profile-flip-card {
+    transform: rotateY(180deg);
+}
+
+.profile-front,
+.profile-back {
+    position: absolute;
+    width: 300px; /* Increased from 280px */
+    height: 300px; /* Increased from 280px */
+    backface-visibility: hidden;
+    border-radius: 20px;
+    border: 3px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img {
+    width: 300px; /* Increased from 280px */
+    height: 300px; /* Increased from 280px */
+    border-radius: 17px;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: bicubic;
+}
+
+.profile-back {
+    transform: rotateY(180deg);
+    background: var(--secondary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.profile-back-content {
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.profile-back-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.profile-back-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.profile-back-content span {
+    font-style: italic;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* Terminal - Better proportions */
+.terminal-container {
+    background: var(--terminal-bg);
+    border: 1px solid var(--terminal-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    min-width: 500px;
+    height: fit-content; /* Better height management */
+}
+
+.terminal-header {
+    background: var(--terminal-border);
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.btn.red { background: #ff5f56; }
+.btn.yellow { background: #ffbd2e; }
+.btn.green { background: #27ca3f; }
+
+.terminal-title {
+    color: #8b949e;
+    font-size: 0.9rem;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.terminal-body {
+    padding: 1.5rem;
+    min-height: 280px; /* Increased from 250px */
+}
+
+.terminal-body pre {
+    font-family: 'IBM Plex Mono', 'Fira Mono', monospace;
+    font-size: 0.95rem;
+    color: #c9d1d9;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+/* Gallery Section - Larger images and better spacing */
+.gallery-section {
+    margin-top: 3rem; /* Reduced from 4rem */
+}
+
+.section-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 2rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 2.5rem; /* Reduced from 3rem */
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Increased from 250px */
+    gap: 2.5rem; /* Increased gap */
+    padding: 0 1rem;
+    max-width: 1400px; /* Increased max-width */
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--secondary-bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    max-width: 400px; /* Increased max-width */
+    margin: 0 auto;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px); /* Increased hover effect */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+    border-color: var(--green); /* Color change on hover */
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+.gallery-text {
+    color: var(--text-primary);
+    font-size: 1.2rem; /* Increased font size */
+    text-align: center;
+    line-height: 1.4;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 4rem 1rem 2rem; /* Adjusted mobile padding */
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .profile-terminal-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .profile-image {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+    }
+    
+    .profile-flip-card {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .profile-front,
+    .profile-back {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .terminal-container {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .main-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger mobile images */
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .terminal-body {
+        padding: 1rem;
+    }
+    
+    .terminal-body pre {
+        font-size: 0.85rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gallery-card {
+        max-width: 350px; /* Larger single column on very small screens */
+    }
+}
+
+/* Import Google Fonts classes */
+.shadows-into-light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
